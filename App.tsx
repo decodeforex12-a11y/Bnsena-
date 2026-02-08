@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { TelegramIcon, CheckIcon } from './components/icons';
+import { 
+  TelegramIcon, 
+  CheckIcon,
+  ChartBarIcon,
+  MagnifyingGlassIcon,
+  BookOpenIcon,
+  UsersIcon
+} from './components/icons';
 
 const App: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState(15 * 60);
@@ -39,20 +46,44 @@ const App: React.FC = () => {
 
       <main className="container mx-auto px-4 py-8 max-w-2xl flex flex-col items-center text-center">
         {/* 2) SOCIAL PROOF SECTION */}
-        <div className="bg-slate-800 rounded-xl p-6 w-full max-w-md mx-auto mb-10 shadow-lg border border-slate-700">
-          <div className="flex items-center space-x-4">
-            <img
-              src="https://picsum.photos/seed/trader/100"
-              alt="Professional Forex Trader"
-              className="w-24 h-24 rounded-full border-4 border-blue-500"
-            />
-            <div className="text-left">
-              <h2 className="text-xl font-bold text-white">
-                Professional Forex Trader
-              </h2>
-              <p className="text-sm text-slate-300">
-                7+ Years Experience | Forex & Crypto Markets
-              </p>
+        <div className="bg-slate-800 rounded-xl p-5 w-full max-w-md mx-auto mb-10 shadow-lg border border-slate-700 text-left">
+          {/* Top part: Avatar + Stats */}
+          <div className="flex items-center gap-4 mb-4">
+            {/* Avatar with gradient border */}
+            <div className="flex-shrink-0 p-1 bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-600 rounded-full">
+               <img
+                 src="https://i.imgur.com/r6p6e5W.png"
+                 alt="Balkrushna Nale"
+                 className="w-20 h-20 md:w-24 md:h-24 rounded-full border-4 border-slate-800"
+               />
+            </div>
+            {/* Stats */}
+            <div className="flex-grow flex justify-around text-center">
+                <div>
+                    <p className="font-bold text-lg">300</p>
+                    <p className="text-sm text-slate-400">posts</p>
+                </div>
+                <div>
+                    <p className="font-bold text-lg">10.8K</p>
+                    <p className="text-sm text-slate-400">followers</p>
+                </div>
+                <div>
+                    <p className="font-bold text-lg">2,015</p>
+                    <p className="text-sm text-slate-400">following</p>
+                </div>
+            </div>
+          </div>
+    
+          {/* Bio part */}
+          <div>
+            <h3 className="font-bold text-md">Balkrushna Nale | Investor</h3>
+            <p className="text-slate-300 text-sm">Entrepreneur</p>
+            <div className="mt-2 space-y-1 text-slate-300 text-sm leading-snug">
+                <p>🇮🇳🇹🇭🇦🇪</p>
+                <p>Fx Trader | Mentor 📈</p>
+                <p>📊 Real Charts • Real Lessons</p>
+                <p>💼 Discipline | Risk ... more</p>
+                <a href="#" className="text-cyan-400 block truncate">🔗 wa.me/message/IDLRZMNFMIR7A1 and 1 more</a>
             </div>
           </div>
         </div>
@@ -63,7 +94,7 @@ const App: React.FC = () => {
         </h2>
 
         {/* 4) BENEFITS LIST */}
-        <ul className="space-y-4 text-left mb-8 w-full max-w-lg mx-auto">
+        <ul className="space-y-4 text-left mb-12 w-full max-w-lg mx-auto">
           <li className="flex items-start">
             <CheckIcon className="w-6 h-6 text-yellow-400 mr-3 flex-shrink-0 mt-1" />
             <span className="text-slate-200 text-lg">Best Forex & Crypto Signals for Educational Purposes</span>
@@ -77,6 +108,53 @@ const App: React.FC = () => {
             <span className="text-slate-200 text-lg">Purely Educational – No Guaranteed Profits</span>
           </li>
         </ul>
+
+        {/* WHAT YOU GET SECTION */}
+        <section className="w-full max-w-3xl mx-auto mb-12">
+            <h3 className="text-3xl font-bold mb-8 text-center">Here's What You Get Inside:</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+                {/* Item 1 */}
+                <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 flex items-start space-x-4 h-full">
+                    <div className="flex-shrink-0 bg-blue-500/20 text-blue-400 rounded-full p-3 mt-1">
+                        <ChartBarIcon className="w-6 h-6" />
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-lg mb-1">Daily Signals</h4>
+                        <p className="text-slate-400 text-sm">Educational trade ideas for Forex & Crypto markets.</p>
+                    </div>
+                </div>
+                {/* Item 2 */}
+                <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 flex items-start space-x-4 h-full">
+                    <div className="flex-shrink-0 bg-blue-500/20 text-blue-400 rounded-full p-3 mt-1">
+                        <MagnifyingGlassIcon className="w-6 h-6" />
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-lg mb-1">In-Depth Analysis</h4>
+                        <p className="text-slate-400 text-sm">Technical and price action analysis to help you learn.</p>
+                    </div>
+                </div>
+                {/* Item 3 */}
+                <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 flex items-start space-x-4 h-full">
+                    <div className="flex-shrink-0 bg-blue-500/20 text-blue-400 rounded-full p-3 mt-1">
+                        <BookOpenIcon className="w-6 h-6" />
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-lg mb-1">Educational Content</h4>
+                        <p className="text-slate-400 text-sm">Learn trading concepts, strategies, and risk management.</p>
+                    </div>
+                </div>
+                {/* Item 4 */}
+                <div className="bg-slate-800 p-6 rounded-lg border border-slate-700 flex items-start space-x-4 h-full">
+                    <div className="flex-shrink-0 bg-blue-500/20 text-blue-400 rounded-full p-3 mt-1">
+                        <UsersIcon className="w-6 h-6" />
+                    </div>
+                    <div>
+                        <h4 className="font-bold text-lg mb-1">Community Support</h4>
+                        <p className="text-slate-400 text-sm">Connect with fellow traders in our active community.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         {/* 5) PRIMARY CTA BUTTON */}
         <a
